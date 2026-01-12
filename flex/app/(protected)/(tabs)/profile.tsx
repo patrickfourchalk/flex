@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { ThemedText } from '@/components/themed-text';
 import { Fonts } from '@/constants/theme';
+import { Button } from 'react-native';
+import { AuthContext } from '@/app/utils/authContext';
 
 export default function ProfileScreen () {
+    const AuthState = useContext(AuthContext);
     return (
         <>
             <ThemedText
@@ -34,7 +37,7 @@ export default function ProfileScreen () {
                 }}>
                 Explore
             </ThemedText>
-            
+            <Button title="Log out!" onPress={AuthState.logOut} />
         </>
         
     )
