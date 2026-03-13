@@ -1,6 +1,8 @@
-import { useRouter } from 'expo-router';
+import { SplashScreen, useRouter } from 'expo-router';
 import { createContext, PropsWithChildren, useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+
+SplashScreen.preventAutoHideAsync()
 
 type AuthState = {
     isLoggedIn: boolean,
