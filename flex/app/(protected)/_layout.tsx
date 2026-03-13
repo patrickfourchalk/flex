@@ -1,11 +1,11 @@
 import { Redirect, Tabs } from 'expo-router';
 import React, { useContext } from 'react';
 
+import { AuthContext } from '@/app/utils/authContext';
 import { HapticTab } from '@/components/haptic-tab';
 import { IconSymbol } from '@/components/ui/icon-symbol';
 import { Colors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
-import { AuthContext } from '@/app/utils/authContext';
 
 export default function ProtectedLayout() {
   const colorScheme = useColorScheme();
@@ -45,6 +45,13 @@ export default function ProtectedLayout() {
         options={{
           title: 'Profile',
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="person.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="(tabs)/notes"
+        options={{
+          title: 'Notes',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="clipboard.fill" color={color} />,
         }}
       />
     </Tabs>
