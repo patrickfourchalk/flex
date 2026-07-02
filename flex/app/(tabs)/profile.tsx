@@ -1,8 +1,6 @@
-import React, { useContext } from 'react';
-import { ThemedText } from '@/components/ThemedText';
-import { Fonts } from '@/constants/theme';
-import { Button, Text } from 'react-native';
 import { useAuth } from '@/app/utils/authContext';
+import React from 'react';
+import { Button, Text } from 'react-native';
 
 export default function ProfileScreen () {
     const { user, signOut } = useAuth();
