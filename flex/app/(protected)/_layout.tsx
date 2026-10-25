@@ -1,23 +1,13 @@
-import { Redirect, Tabs } from 'expo-router';
-import React, { useContext } from 'react';
+import { Tabs } from 'expo-router';
+import React from 'react';
 
 import { HapticTab } from '@/components/haptic-tab';
 import { IconSymbol } from '@/components/ui/icon-symbol';
 import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
-import { AuthContext } from '@/app/utils/authContext';
+import { useColorScheme } from '@/hooks/useColorScheme';
 
 export default function ProtectedLayout() {
   const colorScheme = useColorScheme();
-  const authState = useContext(AuthContext)
-
-  if (!authState.isReady) {
-    return null;
-  }
-
-  if (!authState.isLoggedIn) {
-    return <Redirect href="/login" />
-  }
   
   return (
     <Tabs
